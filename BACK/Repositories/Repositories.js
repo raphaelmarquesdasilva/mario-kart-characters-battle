@@ -8,3 +8,9 @@ export const gettingAllCharacters = async () => {
 
     return characters
 }
+
+export const gettingAllBlocks = async () => {
+    const blocks = prisma.blocks.findMany()
+
+    return blocks
+} 
