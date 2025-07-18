@@ -5,6 +5,7 @@ const router = express.Router()
 
 // Characters
 router.get("/characters/getting-all", Controllers.gettingAllCharacters)
+router.post("/characters/create", Controllers.creatingOneCharacter)
 
 //Blocks
 router.get("/blocks/getting-all", Controllers.gettingAllBlocks)

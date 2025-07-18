@@ -14,9 +14,13 @@ model characters {
     maneuverability     Int         
     strength            Int
     image_url           String      @db.VarChar(255)
+    created_at          DateTime    @default(now())
+    updated_at          DateTime    @updatedAt
 }
 
 model blocks {
-    id          Int         @id @default(autoincrement())
-    name        String      @db.VarChar(50)
+    id                  Int         @id @default(autoincrement())
+    name                String      @db.VarChar(50)
+    created_at          DateTime    @default(now())
+    updated_at          DateTime    @updatedAt
 }

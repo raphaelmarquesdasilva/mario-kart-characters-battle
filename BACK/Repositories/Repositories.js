@@ -9,6 +9,14 @@ export const gettingAllCharacters = async () => {
     return characters
 }
 
+export const creatingOneCharacter = async (body) => {
+    const character = await prisma.characters.create({
+        data: body
+    })
+
+    return character
+}
+
 export const gettingAllBlocks = async () => {
     const blocks = prisma.blocks.findMany()
 

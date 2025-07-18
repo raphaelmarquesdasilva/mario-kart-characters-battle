@@ -10,14 +10,18 @@ CREATE TABLE characters (
     speed            INT                 NOT NULL,
     maneuverability  INT                 NOT NULL,
     strength         INT                 NOT NULL,
-    image_url        VARCHAR(255)        NOT NULL
+    image_url        VARCHAR(255)        NOT NULL,
+    created_at       TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
+    updated_at       TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  
 
 );
 
 CREATE TABLE blocks (
 
-    id              INT             PRIMARY KEY AUTO_INCREMENT,
-    name            VARCHAR(50)     NOT NULL
+    id                  INT                 PRIMARY KEY AUTO_INCREMENT,
+    name                VARCHAR(50)         NOT NULL,
+    created_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
+    updated_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP 
 
 );
 
@@ -34,3 +38,6 @@ INSERT INTO blocks (name) VALUES
     ("STRAIGHT"),
     ("CURVE"),
     ("BATTLE");
+
+
+    

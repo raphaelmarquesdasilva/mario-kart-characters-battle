@@ -10,6 +10,16 @@ export const gettingAllCharacters = async (req,res) => {
     }
 }
 
+export const creatingOneCharacter = async (req,res) => {
+    const { body } = req
+    try {
+        const character = await Repositories.creatingOneCharacter(body)
+        res.status(201).send(character)
+    } catch (error) {
+        res.status(500).send(`Error at trying to create the character. The error was: ${error}`)
+    }
+}
+
 export const gettingAllBlocks = async (req,res) => {
     try {
         const blocks = await Repositories.gettingAllBlocks()
