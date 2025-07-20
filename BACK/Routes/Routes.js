@@ -9,6 +9,7 @@ router.get("/characters/getting-all", Controllers.gettingAllCharacters)
 router.post("/characters/create", Controllers.creatingOneCharacter)
 
 //Blocks
+router.get("/blocks/getting-one/:id", Controllers.gettingOneBlock)
 router.get("/blocks/getting-all", Controllers.gettingAllBlocks)
 
 

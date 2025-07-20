@@ -27,6 +27,16 @@ export const creatingOneCharacter = async (body) => {
     return character
 }
 
+export const gettingOneBlock = async (id) => {
+    const block = await prisma.blocks.findUnique({
+        where: {
+            id: parseInt(id)
+        }
+    })
+
+    return block
+}
+
 export const gettingAllBlocks = async () => {
     const blocks = prisma.blocks.findMany()
 

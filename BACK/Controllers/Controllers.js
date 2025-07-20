@@ -31,6 +31,16 @@ export const creatingOneCharacter = async (req,res) => {
     }
 }
 
+export const gettingOneBlock = async (req,res) => {
+    const { id } = req.params
+    try {
+        const block = await Repositories.gettingOneBlock(id)
+        res.status(200).send(block)
+    } catch (error) {
+        res.status(500).end(`Error at trying to get the block. The error was: ${error}`)
+    }
+}
+
 export const gettingAllBlocks = async (req,res) => {
     try {
         const blocks = await Repositories.gettingAllBlocks()
