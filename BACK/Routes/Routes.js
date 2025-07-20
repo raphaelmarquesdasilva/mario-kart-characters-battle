@@ -4,6 +4,7 @@ import * as Controllers from "../Controllers/Controllers.js"
 const router = express.Router()
 
 // Characters
+router.get("/characters/getting-one/:id", Controllers.gettingOneCharacter)
 router.get("/characters/getting-all", Controllers.gettingAllCharacters)
 router.post("/characters/create", Controllers.creatingOneCharacter)
 

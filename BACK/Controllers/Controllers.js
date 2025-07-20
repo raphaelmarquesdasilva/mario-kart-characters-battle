@@ -1,6 +1,17 @@
 import * as Repositories from "../Repositories/Repositories.js"
 
 
+export const gettingOneCharacter = async (req,res) => {
+    const { id } = req.params
+    try {
+        const character = await Repositories.gettingOneCharacter(id)
+        res.status(200).send(character)
+    } catch (error) {
+        res.status(500).end(`Error at trying to get the character. The error was: ${error}`)
+    }
+}
+
+
 export const gettingAllCharacters = async (req,res) => {
     try {
          const characters = await Repositories.gettingAllCharacters()

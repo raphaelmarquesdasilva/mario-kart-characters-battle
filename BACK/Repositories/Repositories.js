@@ -3,6 +3,16 @@ import {PrismaClient} from "@prisma/client"
 
 const prisma = new PrismaClient()
 
+export const gettingOneCharacter = async (id) => {
+    const character = await prisma.characters.findUnique({
+        where: {
+            id: parseInt(id)
+        }
+    })
+
+    return character
+}
+
 export const gettingAllCharacters = async () => {
     const characters = prisma.characters.findMany()
 
